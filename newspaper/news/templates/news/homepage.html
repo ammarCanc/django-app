@@ -1,0 +1,30 @@
+<!--   Template for Newspaper application index page  -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% if news_list %}
+        <h2> News </h2>
+        {% for news in news_list %}
+        <h3>{{ news.title }}</h3>
+        <p>{{ news.description }}</p>
+        {% endfor %} 
+    {% endif %}
+    <hr>
+    {% if blog_list %}
+        <h2> Blogs </h2>
+        {% for blog in blog_list %}
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.description }}</p>
+        {% endfor %}
+    {% endif %}
+    <hr>
+    {% if article_list %}
+        <h2> Articles </h2>
+        {% for article in article_list %}
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}
